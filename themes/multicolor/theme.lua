@@ -14,8 +14,9 @@ theme.helpers.isempty	            = function (s)
 end
 theme.confdir                       = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                     = theme.confdir .. "/wall.png"
+theme.profile 			    = "source " .. os.getenv("HOME") .. "/.profile"
 theme.selected			    = function ()
-    os.execute("source /home/innovaccer/.profile")
+    os.execute(theme.profile)
     return function ()
         selected = os.getenv('WALLDIR') or "xplicitwp"
         return selected
